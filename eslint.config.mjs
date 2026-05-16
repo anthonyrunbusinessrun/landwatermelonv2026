@@ -12,6 +12,7 @@ const eslintConfig = [
   {
     rules: {
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "@next/next/no-page-custom-font": "off", // fonts loaded via CSS for Railway build compatibility
       "@next/next/no-img-element": "off", // allow img for external URLs with fallback
     },
   },

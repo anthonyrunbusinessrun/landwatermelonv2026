@@ -4,7 +4,7 @@ import { MotionWrapper } from '@/components/ui/MotionWrapper'
 
 export function BigNumber() {
   return (
-    <div
+    <section
       className="relative overflow-hidden px-12 py-20 text-center"
       style={{ background: 'var(--red)' }}
       aria-label="3,000 Semi-truck loads per season"
@@ -61,6 +61,6 @@ export function BigNumber() {
           custom packing and on-time delivery — season after season since 1966.
         </p>
       </MotionWrapper>
-    </div>
+    </section>
   )
 }

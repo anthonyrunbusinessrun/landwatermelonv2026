@@ -1,7 +1,7 @@
 'use client'
 
 import Link                 from 'next/link'
-import { motion }           from 'framer-motion'
+import { motion } from 'framer-motion'
 import { varieties }        from '@/content/varieties'
 import { SectionTag }       from '@/components/ui/SectionHeader'
 import { StaggerContainer, StaggerChild } from '@/components/ui/MotionWrapper'

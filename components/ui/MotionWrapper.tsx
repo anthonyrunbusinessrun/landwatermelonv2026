@@ -1,8 +1,10 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
-import { useReducedMotion }       from '@/hooks/useReducedMotion'
-import { cn }                     from '@/lib/utils'
+import { motion, AnimatePresence, type Variants } from 'framer-motion'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { cn }               from '@/lib/utils'
+
+export { AnimatePresence }
 
 const DEFAULT_VARIANTS: Variants = {
   hidden:  { opacity: 0, y: 24 },
@@ -10,29 +12,23 @@ const DEFAULT_VARIANTS: Variants = {
 }
 
 interface MotionWrapperProps {
-  children:  React.ReactNode
+  children:   React.ReactNode
   className?: string
-  delay?:    number
-  duration?: number
-  variants?: Variants
-  margin?:   string
-  once?:     boolean
+  delay?:     number
+  duration?:  number
+  variants?:  Variants
+  margin?:    string
+  once?:      boolean
 }
 
 export function MotionWrapper({
-  children,
-  className,
-  delay    = 0,
-  duration = 0.65,
+  children, className,
+  delay = 0, duration = 0.65,
   variants = DEFAULT_VARIANTS,
-  margin   = '-8%',
-  once     = true,
+  margin = '-8%', once = true,
 }: MotionWrapperProps) {
   const reduced = useReducedMotion()
-
-  if (reduced) {
-    return <div className={className}>{children}</div>
-  }
+  if (reduced) return <div className={cn(className)}>{children}</div>
 
   return (
     <motion.div
@@ -41,31 +37,20 @@ export function MotionWrapper({
       whileInView="visible"
       viewport={{ once, margin }}
       variants={variants}
-      transition={{
-        duration,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
   )
 }
 
-/* Stagger container — wraps multiple animated children */
 export function StaggerContainer({
-  children,
-  className,
-  stagger = 0.1,
-  delay   = 0,
+  children, className,
+  stagger = 0.1, delay = 0,
 }: {
-  children:  React.ReactNode
-  className?: string
-  stagger?:  number
-  delay?:    number
+  children: React.ReactNode; className?: string; stagger?: number; delay?: number
 }) {
   const reduced = useReducedMotion()
-
   if (reduced) return <div className={className}>{children}</div>
 
   return (
@@ -74,25 +59,15 @@ export function StaggerContainer({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-8%' }}
-      variants={{
-        visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
-      }}
+      variants={{ visible: { transition: { staggerChildren: stagger, delayChildren: delay } } }}
     >
       {children}
     </motion.div>
   )
 }
 
-/* Individual stagger child */
-export function StaggerChild({
-  children,
-  className,
-}: {
-  children:  React.ReactNode
-  className?: string
-}) {
+export function StaggerChild({ children, className }: { children: React.ReactNode; className?: string }) {
   const reduced = useReducedMotion()
-
   if (reduced) return <div className={className}>{children}</div>
 
   return (

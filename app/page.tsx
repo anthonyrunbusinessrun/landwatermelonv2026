@@ -1,5 +1,6 @@
 import { Navbar }      from '@/components/layout/Navbar'
 import { Footer }      from '@/components/layout/Footer'
+import { SkipLink }    from '@/components/layout/SkipLink'
 import { Hero }        from '@/components/sections/Hero'
 import { StatsBar, TrustBar } from '@/components/sections/StatsBar'
 import { About }       from '@/components/sections/About'
@@ -11,14 +12,17 @@ import { FAQ }         from '@/components/sections/FAQ'
 import { CTA }         from '@/components/sections/CTA'
 
 /*
-  Page flow matches HTML reference:
-  Dark → Stats → Trust → Cream → Dark → Cream → Red → Cream → Cream → Dark → Dark
+  Section flow matches reference HTML:
+  Dark(hero) → Dark(stats/trust) → Cream(about) → Dark(varieties)
+  → Cream(regions) → Red(stat) → Cream(testimonial)
+  → Cream(faq) → Dark(cta)
 */
 export default function Home() {
   return (
     <>
+      <SkipLink />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <StatsBar />
         <TrustBar />

@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline:     'Growers, Shippers & Packers since 1966',
   description: 'Family-owned watermelon growers, shippers, and packers since 1966. Averaging 3,000 semi-truck loads per season across six US growing regions — seeded, seedless, yellow meat and specialty varieties to your exact specification.',
   url:         'https://landwatermelon.com',
-  ogImage:     '/og/default.jpg',
+  ogImage:     '/og/default.svg',
   established: 1966,
 
   contact: {
