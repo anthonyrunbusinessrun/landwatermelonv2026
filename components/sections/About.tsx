@@ -119,7 +119,7 @@ export function About() {
           {/* Image */}
           <div className="relative aspect-[4/3] rounded-[4px] overflow-hidden shadow-premium">
             <Image
-              src="http://landwatermelon.com/wp-content/uploads/2012/02/land-family.jpg"
+              src="https://static1.1.sqspcdn.com/static/f/597137/7147686/1275334651843/Land+Family.jpg?token=maPi5Oxe9OsuujsSEYbE%2FZCMNLc%3D"
               alt="The Land Family — Branford, Florida — Est. 1966"
               fill
               className="object-cover"
