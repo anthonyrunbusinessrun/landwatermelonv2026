@@ -117,13 +117,14 @@ export function About() {
             🟡 Yellow Meat Specialist
           </div>
 
-          {/* Image */}
-          <div className="relative aspect-[4/3] rounded-[4px] overflow-hidden shadow-premium">
+          {/* Image — full frame, scales without cropping */}
+          <div className="rounded-[4px] overflow-hidden shadow-premium">
             <Image
-              src={siteConfig.familyPhoto}
-              alt="The Land Family — Branford, Florida — Est. 1966"
-              fill
-              className="object-cover"
+              src={siteConfig.familyPhoto.src}
+              alt={siteConfig.familyPhoto.alt}
+              width={siteConfig.familyPhoto.width}
+              height={siteConfig.familyPhoto.height}
+              className="w-full h-auto block"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

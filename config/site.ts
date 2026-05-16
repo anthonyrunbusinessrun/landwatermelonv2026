@@ -22,8 +22,12 @@ export const siteConfig = {
     width:  1024,
     height: 576,
   },
-  familyPhoto:
-    'https://static1.1.sqspcdn.com/static/f/597137/7147686/1275334651843/Land+Family.jpg?token=maPi5Oxe9OsuujsSEYbE%2FZCMNLc%3D',
+  familyPhoto: {
+    src:    'https://static1.1.sqspcdn.com/static/f/597137/7147686/1275334651843/Land+Family.jpg?token=maPi5Oxe9OsuujsSEYbE%2FZCMNLc%3D',
+    alt:    'The Land Family — Branford, Florida — Est. 1966',
+    width:  700,
+    height: 465,
+  },
   established: 1966,
 
   contact: {
