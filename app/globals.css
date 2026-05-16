@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+/* ── DESIGN TOKENS ── */
+@layer base {
+  :root {
+    --dark:   #0D1A0A;
+    --forest: #1A2216;
+    --green:  #2D4A22;
+    --mid:    #4A7A35;
+    --sage:   #7AAD5E;
+    --cream:  #F5F0E8;
+    --nude:   #EDE7D5;
+    --warm:   #E8E0CC;
+    --red:    #C0392B;
+    --red2:   #E8503A;
+    --gold:   #E8C547;
+    --gold2:  #D4A820;
+    --gold3:  #F5D96B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(232, 197, 71, 0.28);
+    color: var(--dark);
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+}
+
+/* ── TEXTURE UTILITIES ── */
+@layer utilities {
+  .texture-shell {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='160' viewBox='0 0 80 160'%3E%3Cpath d='M10 0 C10 40 20 40 10 80 C0 120 10 120 10 160' stroke='%23F5F0E8' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3Cpath d='M30 0 C30 40 40 40 30 80 C20 120 30 120 30 160' stroke='%23F5F0E8' stroke-width='1.2' fill='none' stroke-linecap='round' opacity='0.05'/%3E%3Cpath d='M55 0 C55 40 65 40 55 80 C45 120 55 120 55 160' stroke='%23F5F0E8' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3Cpath d='M75 0 C75 40 80 40 75 80 C70 120 75 120 75 160' stroke='%23F5F0E8' stroke-width='1' fill='none' stroke-linecap='round' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 80px 160px;
+  }
+
+  .texture-seeds {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cellipse cx='18' cy='22' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-20 18 22)'/%3E%3Cellipse cx='60' cy='14' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.06' transform='rotate(10 60 14)'/%3E%3Cellipse cx='98' cy='28' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-30 98 28)'/%3E%3Cellipse cx='35' cy='65' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.05' transform='rotate(15 35 65)'/%3E%3Cellipse cx='78' cy='72' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-10 78 72)'/%3E%3Cellipse cx='108' cy='60' rx='3' ry='6' fill='%231A2216' opacity='0.05' transform='rotate(25 108 60)'/%3E%3Cellipse cx='8' cy='82' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.06' transform='rotate(-5 8 82)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 120px 100px;
+  }
+
+  /* Font utilities */
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-body    { font-family: 'DM Sans', system-ui, sans-serif; }
+
+  /* Gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--gold), var(--gold3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section padding utility */
+  .section-pad { padding: 96px 48px; }
+  @media (max-width: 1024px) { .section-pad { padding: 64px 24px; } }
+  @media (max-width: 640px)  { .section-pad { padding: 56px 20px; } }
+}
+
+/* ── SECTION BACKGROUNDS ── */
+@layer components {
+  .section-dark {
+    background: linear-gradient(160deg, #1A2216 0%, #2D4A22 60%, #3A5C2A 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='160' viewBox='0 0 80 160'%3E%3Cpath d='M10 0 C10 40 20 40 10 80 C0 120 10 120 10 160' stroke='%23F5F0E8' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3Cpath d='M30 0 C30 40 40 40 30 80 C20 120 30 120 30 160' stroke='%23F5F0E8' stroke-width='1.2' fill='none' stroke-linecap='round' opacity='0.05'/%3E%3Cpath d='M55 0 C55 40 65 40 55 80 C45 120 55 120 55 160' stroke='%23F5F0E8' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3Cpath d='M75 0 C75 40 80 40 75 80 C70 120 75 120 75 160' stroke='%23F5F0E8' stroke-width='1' fill='none' stroke-linecap='round' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 80px 160px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section-dark > * { position: relative; z-index: 1; }
+
+  .section-cream {
+    background: linear-gradient(160deg, #F5F0E8 0%, #EDE7D5 50%, #E0D8C4 100%);
+    color: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-cream::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cellipse cx='18' cy='22' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-20 18 22)'/%3E%3Cellipse cx='60' cy='14' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.06' transform='rotate(10 60 14)'/%3E%3Cellipse cx='98' cy='28' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-30 98 28)'/%3E%3Cellipse cx='35' cy='65' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.05' transform='rotate(15 35 65)'/%3E%3Cellipse cx='78' cy='72' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-10 78 72)'/%3E%3Cellipse cx='108' cy='60' rx='3' ry='6' fill='%231A2216' opacity='0.05' transform='rotate(25 108 60)'/%3E%3Cellipse cx='8' cy='82' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.06' transform='rotate(-5 8 82)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 120px 100px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section-cream > * { position: relative; z-index: 1; }
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--mid); }

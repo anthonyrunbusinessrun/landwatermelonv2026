@@ -1,0 +1,71 @@
+/* ============================================================
+   RAYMON J LAND, INC. — DESIGN TOKENS
+   Extracted from primary HTML reference
+   ============================================================ */
+
+:root {
+  /* ── FOREST GREENS ── */
+  --dark:    #0D1A0A;
+  --forest:  #1A2216;
+  --green:   #2D4A22;
+  --mid:     #4A7A35;
+  --sage:    #7AAD5E;
+
+  /* ── CREAM / NUDE ── */
+  --cream:   #F5F0E8;
+  --nude:    #EDE7D5;
+  --warm:    #E8E0CC;
+
+  /* ── WATERMELON ACCENTS ── */
+  --red:     #C0392B;
+  --red2:    #E8503A;
+
+  /* ── GOLD ── */
+  --gold:    #E8C547;
+  --gold2:   #D4A820;
+  --gold3:   #F5D96B;
+
+  /* ── SEMANTIC ── */
+  --color-text-on-dark:    rgba(245, 240, 232, 0.65);
+  --color-text-on-dark-hi: #F5F0E8;
+  --color-text-on-cream:   #0D1A0A;
+  --color-text-muted:      rgba(26, 34, 22, 0.45);
+  --color-border-dark:     rgba(74, 122, 53, 0.18);
+  --color-border-cream:    rgba(45, 74, 34, 0.12);
+
+  /* ── GRADIENTS ── */
+  --grad-hero:   linear-gradient(145deg, #0D1A0A 0%, #1A2216 15%, #2D4A22 40%, #4A7A35 68%, #EDE7D5 100%);
+  --grad-dark:   linear-gradient(160deg, #1A2216 0%, #2D4A22 60%, #3A5C2A 100%);
+  --grad-cream:  linear-gradient(160deg, #F5F0E8 0%, #EDE7D5 50%, #E0D8C4 100%);
+  --grad-cta:    linear-gradient(145deg, #0D1A0A 0%, #1A2216 50%, #2D4A22 100%);
+  --grad-rule:   linear-gradient(90deg, #C0392B 0%, #E8503A 30%, #E8C547 65%, #F5D96B 85%, transparent 100%);
+  --grad-divider: linear-gradient(90deg, #C0392B, #E8C547);
+
+  /* ── WATERMELON SVG TEXTURES ── */
+  /* Shell stripes — used on dark sections */
+  --wm-shell: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='160' viewBox='0 0 80 160'%3E%3Cpath d='M10 0 C10 40 20 40 10 80 C0 120 10 120 10 160' stroke='%23F5F0E8' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3Cpath d='M30 0 C30 40 40 40 30 80 C20 120 30 120 30 160' stroke='%23F5F0E8' stroke-width='1.2' fill='none' stroke-linecap='round' opacity='0.05'/%3E%3Cpath d='M55 0 C55 40 65 40 55 80 C45 120 55 120 55 160' stroke='%23F5F0E8' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3Cpath d='M75 0 C75 40 80 40 75 80 C70 120 75 120 75 160' stroke='%23F5F0E8' stroke-width='1' fill='none' stroke-linecap='round' opacity='0.04'/%3E%3C/svg%3E");
+
+  /* Seeds — used on cream sections (inside the watermelon) */
+  --wm-seeds: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cellipse cx='18' cy='22' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-20 18 22)'/%3E%3Cellipse cx='60' cy='14' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.06' transform='rotate(10 60 14)'/%3E%3Cellipse cx='98' cy='28' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-30 98 28)'/%3E%3Cellipse cx='35' cy='65' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.05' transform='rotate(15 35 65)'/%3E%3Cellipse cx='78' cy='72' rx='4' ry='7' fill='%231A2216' opacity='0.07' transform='rotate(-10 78 72)'/%3E%3Cellipse cx='108' cy='60' rx='3' ry='6' fill='%231A2216' opacity='0.05' transform='rotate(25 108 60)'/%3E%3Cellipse cx='8' cy='82' rx='3.5' ry='6.5' fill='%231A2216' opacity='0.06' transform='rotate(-5 8 82)'/%3E%3C/svg%3E");
+
+  /* ── SPACING ── */
+  --space-section: 96px;
+  --space-section-mobile: 64px;
+  --space-nav: 64px;
+  --pad-x: 48px;
+  --pad-x-mobile: 24px;
+
+  /* ── TYPOGRAPHY ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* ── BORDERS / RADIUS ── */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* ── TRANSITIONS ── */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+}

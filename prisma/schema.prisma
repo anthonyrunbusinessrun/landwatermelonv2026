@@ -1,0 +1,80 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContactInquiry {
+  id        String        @id @default(cuid())
+  name      String
+  company   String?
+  email     String
+  phone     String?
+  message   String        @db.Text
+  type      InquiryType   @default(GENERAL)
+  status    InquiryStatus @default(NEW)
+  ipHash    String?       // hashed for spam tracking, never raw IP
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("contact_inquiries")
+}
+
+model OrderRequest {
+  id           String      @id @default(cuid())
+  companyName  String
+  contactName  String
+  email        String
+  phone        String?
+  varietyIds   String[]
+  estimatedQty String
+  deliveryDate DateTime?
+  regions      String[]
+  notes        String?     @db.Text
+  status       OrderStatus @default(PENDING)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([status])
+  @@map("order_requests")
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  active    Boolean  @default(true)
+  source    String?  // which CTA triggered signup
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("newsletter_subscribers")
+}
+
+enum InquiryType {
+  GENERAL
+  WHOLESALE
+  LOGISTICS
+  MEDIA
+}
+
+enum InquiryStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+enum OrderStatus {
+  PENDING
+  REVIEWING
+  QUOTED
+  CONFIRMED
+  DECLINED
+}
