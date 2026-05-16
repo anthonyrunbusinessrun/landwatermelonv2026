@@ -2,6 +2,7 @@
 
 import Link           from 'next/link'
 import { siteConfig } from '@/config/site'
+import { Logo }       from './Logo'
 
 const NAV_LINKS = [
   { label: 'Home',        href: '#home'      },
@@ -36,14 +37,7 @@ export function Footer() {
       >
         {/* Brand column */}
         <div>
-          <div
-            className="font-display font-light text-[20px] mb-2"
-            style={{ color: 'var(--cream)' }}
-          >
-            Raymon{' '}
-            <em style={{ color: 'var(--sage)', fontStyle: 'italic' }}>J</em>
-            {' '}Land, Inc.
-          </div>
+          <Logo variant="onDark" size="footer" className="mb-2" />
           <p
             className="text-[11px] leading-[1.7] max-w-[240px] mt-1"
             style={{ color: 'rgba(245,240,232,0.35)' }}

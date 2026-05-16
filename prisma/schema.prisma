@@ -7,6 +7,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+  VIEWER
+}
+
+enum InquiryType {
+  GENERAL
+  WHOLESALE
+  LOGISTICS
+  MEDIA
+}
+
+enum InquiryStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+enum OrderStatus {
+  PENDING
+  REVIEWING
+  QUOTED
+  CONFIRMED
+  DECLINED
+}
+
+enum ContentType {
+  TEXT
+  HTML
+  MARKDOWN
+  IMAGE_URL
+}
+
 // ── ADMIN ──────────────────────────────────────────────────
 model AdminUser {
   id           String    @id @default(cuid())
@@ -90,10 +125,3 @@ model ContentBlock {
   @@index([key])
   @@map("content_blocks")
 }
-
-// ── ENUMS ──────────────────────────────────────────────────
-enum AdminRole    { SUPER_ADMIN ADMIN VIEWER }
-enum InquiryType  { GENERAL WHOLESALE LOGISTICS MEDIA }
-enum InquiryStatus{ NEW READ REPLIED ARCHIVED }
-enum OrderStatus  { PENDING REVIEWING QUOTED CONFIRMED DECLINED }
-enum ContentType  { TEXT HTML MARKDOWN IMAGE_URL }

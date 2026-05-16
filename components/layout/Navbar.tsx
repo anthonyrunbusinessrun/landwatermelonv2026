@@ -3,6 +3,7 @@
 import Link             from 'next/link'
 import { useState }     from 'react'
 import { siteConfig }   from '@/config/site'
+import { Logo }         from './Logo'
 import { MobileNav }    from './MobileNav'
 
 export function Navbar() {
@@ -18,7 +19,7 @@ export function Navbar() {
       />
 
       <nav
-        className="fixed left-0 right-0 z-[100] flex justify-between items-center px-12 h-16"
+        className="fixed left-0 right-0 z-[100] flex justify-between items-center gap-4 px-5 sm:px-8 lg:px-12 h-16"
         style={{
           top:            '3px',
           background:     'rgba(237,231,213,0.92)',
@@ -27,23 +28,7 @@ export function Navbar() {
         }}
         aria-label="Main navigation"
       >
-        {/* Logo */}
-        <Link href="#home" className="group">
-          <div
-            className="font-display font-light text-[18px] tracking-[0.3px] leading-[1.1]"
-            style={{ color: 'var(--dark)' }}
-          >
-            Raymon{' '}
-            <em style={{ color: 'var(--sage)', fontStyle: 'italic' }}>J</em>
-            {' '}Land, Inc.
-          </div>
-          <div
-            className="text-[9px] tracking-[2px] uppercase mt-0.5"
-            style={{ color: 'rgba(26,34,22,0.45)' }}
-          >
-            {siteConfig.tagline}
-          </div>
-        </Link>
+        <Logo size="navbar" />
 
         {/* Desktop nav links */}
         <div className="hidden lg:flex items-center gap-8">
