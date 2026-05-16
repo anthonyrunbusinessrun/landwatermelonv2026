@@ -16,6 +16,12 @@ const eslintConfig = [
       "@next/next/no-img-element": "off", // allow img for external URLs with fallback
     },
   },
+  {
+    files: ["app/admin/**/*.tsx"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off", // Admin pages use runtime DB data pre-Prisma-generate
+    },
+  },
 ]
 
 export default eslintConfig

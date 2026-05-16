@@ -1,6 +1,5 @@
-[build]
-builder = "NIXPACKS"
-buildCommand = "npm ci && npm run build:railway"
+# nixpacks.toml defines the build phases
+# This file configures Railway deployment behavior only
 
 [deploy]
 startCommand = "npm start"
@@ -8,6 +7,3 @@ healthcheckPath = "/api/health"
 healthcheckTimeout = 60
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
-
-[[deploy.environmentVariables]]
-# Nixpacks will pick up DATABASE_URL from Railway service vars
