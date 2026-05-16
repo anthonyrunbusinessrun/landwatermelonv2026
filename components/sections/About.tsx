@@ -4,6 +4,7 @@ import Image                from 'next/image'
 import Link                 from 'next/link'
 import { MotionWrapper, StaggerContainer, StaggerChild } from '@/components/ui/MotionWrapper'
 import { SectionTag }       from '@/components/ui/SectionHeader'
+import { siteConfig }       from '@/config/site'
 
 const ABOUT_STATS = [
   { n: '90', sup: 'M+', supColor: 'mid',  label: 'Pounds annually' },
@@ -119,7 +120,7 @@ export function About() {
           {/* Image */}
           <div className="relative aspect-[4/3] rounded-[4px] overflow-hidden shadow-premium">
             <Image
-              src="https://static1.1.sqspcdn.com/static/f/597137/7147686/1275334651843/Land+Family.jpg?token=maPi5Oxe9OsuujsSEYbE%2FZCMNLc%3D"
+              src={siteConfig.familyPhoto}
               alt="The Land Family — Branford, Florida — Est. 1966"
               fill
               className="object-cover"

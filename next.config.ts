@@ -11,6 +11,7 @@ const config: NextConfig = {
     remotePatterns: [
       { protocol: 'http',  hostname: 'landwatermelon.com', pathname: '/wp-content/uploads/**' },
       { protocol: 'https', hostname: 'landwatermelon.com', pathname: '/wp-content/uploads/**' },
+      { protocol: 'https', hostname: 'static1.1.sqspcdn.com', pathname: '/static/**' },
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 768, 1024, 1280, 1536],

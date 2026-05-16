@@ -5,6 +5,7 @@ import Image               from 'next/image'
 import Link                from 'next/link'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { ColorRule }       from '@/components/ui/SectionHeader'
+import { siteConfig }      from '@/config/site'
 
 export function Hero() {
   const reduced = useReducedMotion()
@@ -18,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex flex-col lg:flex-row items-center gap-10 lg:gap-12 overflow-hidden"
       style={{ padding: '120px 48px 80px' }}
       aria-label="Raymon J Land — Premium Watermelon Growers Since 1966"
     >
@@ -104,7 +105,7 @@ export function Hero() {
           animate:    { opacity: 1, x: 0 },
           transition: { duration: 0.85, delay: 0.25, ease: [0.22, 1, 0.36, 1] },
         })}
-        className="hidden lg:block flex-shrink-0 w-[380px] ml-15"
+        className="relative z-10 w-full max-w-[420px] lg:flex-shrink-0 lg:w-[420px] lg:ml-8"
       >
         <div
           className="overflow-hidden"
@@ -113,14 +114,14 @@ export function Hero() {
             border:      '1px solid rgba(245,240,232,0.12)',
           }}
         >
-          <div className="relative h-[260px] bg-green">
+          <div className="relative aspect-[4/3] bg-green">
             <Image
-              src="https://static1.1.sqspcdn.com/static/f/597137/7147686/1275334651843/Land+Family.jpg?token=maPi5Oxe9OsuujsSEYbE%2FZCMNLc%3D"
+              src={siteConfig.familyPhoto}
               alt="The Land Family — Branford, Florida"
               fill
-              className="object-cover"
-              style={{ filter: 'brightness(0.85)' }}
-              sizes="380px"
+              className="object-cover object-center"
+              style={{ filter: 'brightness(0.9)' }}
+              sizes="(max-width: 1024px) 100vw, 420px"
               priority
             />
           </div>
