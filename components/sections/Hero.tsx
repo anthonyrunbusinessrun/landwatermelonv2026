@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col lg:flex-row items-center gap-10 lg:gap-12 overflow-hidden"
+      className="relative min-h-screen flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12 overflow-hidden"
       style={{ padding: '120px 48px 80px' }}
       aria-label="Raymon J Land — Premium Watermelon Growers Since 1966"
     >
@@ -105,7 +105,7 @@ export function Hero() {
           animate:    { opacity: 1, x: 0 },
           transition: { duration: 0.85, delay: 0.25, ease: [0.22, 1, 0.36, 1] },
         })}
-        className="relative z-10 w-full max-w-[420px] lg:flex-shrink-0 lg:w-[420px] lg:ml-8"
+        className="relative z-10 w-full max-w-[640px] lg:flex-shrink-0 lg:w-[min(48vw,640px)] lg:ml-8"
       >
         <div
           className="overflow-hidden"
@@ -114,17 +114,15 @@ export function Hero() {
             border:      '1px solid rgba(245,240,232,0.12)',
           }}
         >
-          <div className="relative aspect-[4/3] bg-green">
-            <Image
-              src={siteConfig.familyPhoto}
-              alt="The Land Family — Branford, Florida"
-              fill
-              className="object-cover object-center"
-              style={{ filter: 'brightness(0.9)' }}
-              sizes="(max-width: 1024px) 100vw, 420px"
-              priority
-            />
-          </div>
+          <Image
+            src={siteConfig.heroImage.src}
+            alt={siteConfig.heroImage.alt}
+            width={siteConfig.heroImage.width}
+            height={siteConfig.heroImage.height}
+            className="w-full h-auto block"
+            sizes="(max-width: 1024px) 100vw, 640px"
+            priority
+          />
           <div
             className="px-[22px] py-5"
             style={{ background: 'rgba(13,26,10,0.35)' }}
@@ -133,10 +131,10 @@ export function Hero() {
               className="font-display font-light text-[20px] mb-1.5"
               style={{ color: 'var(--cream)' }}
             >
-              The Land Family · Since 1966
+              Land&apos;s Pride · Since 1966
             </h3>
             <p className="text-[12px] tracking-[1px]" style={{ color: 'rgba(245,240,232,0.5)' }}>
-              Branford, Florida — Family Owned & Operated
+              Family owned — Branford, Florida
             </p>
           </div>
         </div>

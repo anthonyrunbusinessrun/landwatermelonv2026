@@ -16,6 +16,12 @@ export const siteConfig = {
   description: 'Family-owned watermelon growers, shippers, and packers since 1966. Averaging 3,000 semi-truck loads per season across six US growing regions — seeded, seedless, yellow meat and specialty varieties to your exact specification.',
   url:         'https://landwatermelon.com',
   ogImage:     '/og/default.svg',
+  heroImage: {
+    src:    '/images/hero-lands-pride.jpg',
+    alt:    "Land's Pride — family farming in the field",
+    width:  1024,
+    height: 576,
+  },
   familyPhoto:
     'https://static1.1.sqspcdn.com/static/f/597137/7147686/1275334651843/Land+Family.jpg?token=maPi5Oxe9OsuujsSEYbE%2FZCMNLc%3D',
   established: 1966,
