@@ -100,13 +100,20 @@ export function Gallery() {
             aria-roledescription="carousel"
             aria-label="Land Watermelon gallery"
           >
-            <AnimatePresence mode="wait">
+            {/*
+              Pure opacity crossfade — both the outgoing and incoming slides
+              animate at the same time (no `mode="wait"`), so the new image is
+              already fading in while the old one fades out. `initial={false}`
+              skips the entrance animation on first render so the first slide
+              shows instantly.
+            */}
+            <AnimatePresence initial={false}>
               <motion.div
                 key={index}
-                initial={reduced ? false : { opacity: 0, scale: 1.04 }}
-                animate={reduced ? {} : { opacity: 1, scale: 1 }}
-                exit={reduced ? {} : { opacity: 0, scale: 1.02 }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                initial={reduced ? false : { opacity: 0 }}
+                animate={reduced ? {} : { opacity: 1 }}
+                exit={reduced ? {} : { opacity: 0 }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
                 className="absolute inset-0"
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of ${count}: ${slide.title}`}
@@ -146,6 +153,30 @@ export function Gallery() {
                 </div>
               </motion.div>
             </AnimatePresence>
+
+            {/*
+              Silently warm the browser cache for the next/prev slides so the
+              crossfade has no decode delay. These are off-screen, decoded
+              async, and not part of the visible DOM stack.
+            */}
+            <div className="sr-only" aria-hidden>
+              <Image
+                src={slides[(index + 1) % count].src}
+                alt=""
+                width={slides[(index + 1) % count].width}
+                height={slides[(index + 1) % count].height}
+                sizes="1px"
+                loading="eager"
+              />
+              <Image
+                src={slides[(index - 1 + count) % count].src}
+                alt=""
+                width={slides[(index - 1 + count) % count].width}
+                height={slides[(index - 1 + count) % count].height}
+                sizes="1px"
+                loading="eager"
+              />
+            </div>
 
             {/* Prev / Next controls */}
             {count > 1 && (
