@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12 overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
       style={{ padding: '120px 48px 80px' }}
       aria-label="Raymon J Land — Premium Watermelon Growers Since 1966"
     >
@@ -40,8 +40,15 @@ export function Hero() {
       {/* Shell stripe texture */}
       <div className="absolute inset-0 texture-shell pointer-events-none" aria-hidden />
 
+      {/*
+        Centered content rail. On ultrawide monitors the section background
+        still spans edge-to-edge, but the actual hero copy + card stay
+        anchored to a sensibly-sized centered column.
+      */}
+      <div className="relative z-10 container-wide flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-12">
+
       {/* ── LEFT CONTENT ── */}
-      <div className="relative z-10 flex-1 max-w-[580px]">
+      <div className="relative z-10 flex-1 max-w-[580px] 2xl:max-w-[640px] 3xl:max-w-[720px]">
 
         {/* Eyebrow */}
         <motion.div {...anim(0.1)} className="flex items-center gap-2.5 mb-6">
@@ -108,7 +115,7 @@ export function Hero() {
           animate:    { opacity: 1, x: 0 },
           transition: { duration: 0.85, delay: 0.25, ease: [0.22, 1, 0.36, 1] },
         })}
-        className="relative z-10 w-full max-w-[640px] lg:flex-shrink-0 lg:w-[min(48vw,640px)] lg:ml-8"
+        className="relative z-10 w-full max-w-[640px] 2xl:max-w-[720px] 3xl:max-w-[900px] lg:flex-shrink-0 lg:w-[min(48vw,640px)] 2xl:w-[min(48vw,720px)] 3xl:w-[min(48vw,900px)] lg:ml-8"
       >
         <div
           className="overflow-hidden"
@@ -142,6 +149,8 @@ export function Hero() {
           </div>
         </div>
       </motion.div>
+
+      </div>
 
       {/* Scroll indicator */}
       {!reduced && (

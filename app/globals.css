@@ -76,6 +76,26 @@
   .section-pad { padding: 96px 48px; }
   @media (max-width: 1024px) { .section-pad { padding: 64px 24px; } }
   @media (max-width: 640px)  { .section-pad { padding: 56px 20px; } }
+  /* Generous gutter on ultrawide screens so content doesn't kiss the edges */
+  @media (min-width: 1920px) { .section-pad { padding: 120px 80px; } }
+
+  /*
+    Shared centered content container. Grows with the viewport so wide screens
+    don't waste 600+px of dead space on either side of a 1200px column.
+    – default ≤1280px : 1200px cap (laptops / small desktops)
+    – xl   ≥1280px : 1280px cap
+    – 2xl  ≥1536px : 1440px cap
+    – 3xl  ≥1920px : 1680px cap (full-HD desktops & ultrawides)
+  */
+  .container-wide {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 1280px) { .container-wide { max-width: 1280px; } }
+  @media (min-width: 1536px) { .container-wide { max-width: 1440px; } }
+  @media (min-width: 1920px) { .container-wide { max-width: 1680px; } }
 }
 
 /* ── SECTION BACKGROUNDS ── */

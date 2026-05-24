@@ -19,7 +19,7 @@ export function Navbar() {
       />
 
       <nav
-        className="fixed left-0 right-0 z-[100] flex justify-between items-center gap-4 px-5 sm:px-8 lg:px-12 h-16"
+        className="fixed left-0 right-0 z-[100] flex justify-between items-center gap-4 px-5 sm:px-8 lg:px-12 3xl:px-20 h-16"
         style={{
           top:            '3px',
           background:     'rgba(237,231,213,0.92)',

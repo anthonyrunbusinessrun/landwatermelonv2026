@@ -16,7 +16,6 @@ const ACCENT = {
 export function StatsBar() {
   return (
     <div
-      className="flex flex-wrap"
       style={{
         background:   'rgba(13,26,10,0.8)',
         borderTop:    '1px solid rgba(74,122,53,0.2)',
@@ -24,6 +23,7 @@ export function StatsBar() {
       }}
       aria-label="Key statistics"
     >
+      <div className="container-wide flex flex-wrap">
       {STATS.map((s, i) => (
         <div
           key={i}
@@ -53,6 +53,7 @@ export function StatsBar() {
           </div>
         </div>
       ))}
+      </div>
     </div>
   )
 }
@@ -70,13 +71,14 @@ const TRUST_ITEMS = [
 export function TrustBar() {
   return (
     <div
-      className="flex flex-wrap items-center gap-6 px-12 py-4"
+      className="px-12 3xl:px-20 py-4"
       style={{
         background:   'rgba(13,26,10,0.65)',
         borderBottom: '1px solid rgba(74,122,53,0.08)',
       }}
       aria-label="Certifications and credentials"
     >
+      <div className="container-wide flex flex-wrap items-center gap-6">
       {TRUST_ITEMS.map((item, i) => (
         <div key={i} className="flex items-center gap-2">
           <span
@@ -92,6 +94,7 @@ export function TrustBar() {
           </span>
         </div>
       ))}
+      </div>
     </div>
   )
 }

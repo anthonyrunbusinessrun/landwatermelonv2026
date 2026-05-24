@@ -19,7 +19,7 @@ export function About() {
       className="section-cream section-pad"
       aria-labelledby="about-heading"
     >
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* ── LEFT: COPY ── */}
         <div>

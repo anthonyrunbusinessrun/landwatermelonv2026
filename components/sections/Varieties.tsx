@@ -34,7 +34,7 @@ export function Varieties() {
       className="section-dark section-pad"
       aria-labelledby="varieties-heading"
     >
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
         {/* ── LEFT: INTRO ── */}
         <div>

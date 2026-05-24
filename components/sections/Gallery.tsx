@@ -52,7 +52,7 @@ export function Gallery() {
       className="section-dark section-pad"
       aria-labelledby="gallery-heading"
     >
-      <div className="max-w-[1200px] mx-auto">
+      <div className="container-wide">
 
         {/* ── HEADER ── */}
         <div className="flex flex-col items-center text-center mb-10">
@@ -85,9 +85,8 @@ export function Gallery() {
         {/* ── SLIDESHOW ── */}
         <MotionWrapper delay={0.15}>
           <div
-            className="relative mx-auto overflow-hidden"
+            className="relative mx-auto overflow-hidden w-full max-w-[1100px] xl:max-w-[1180px] 2xl:max-w-[1320px] 3xl:max-w-[1520px]"
             style={{
-              maxWidth:    1100,
               aspectRatio: '16 / 9',
               background:  'rgba(245,240,232,0.05)',
               border:      '1px solid rgba(245,240,232,0.12)',
@@ -123,7 +122,7 @@ export function Gallery() {
                   alt={slide.alt}
                   width={slide.width}
                   height={slide.height}
-                  sizes="(max-width: 1100px) 100vw, 1100px"
+                  sizes="(max-width: 1100px) 100vw, (max-width: 1280px) 1100px, (max-width: 1536px) 1180px, (max-width: 1920px) 1320px, 1520px"
                   className="w-full h-full object-cover"
                   priority={index === 0}
                 />

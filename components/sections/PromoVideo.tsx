@@ -40,15 +40,14 @@ export function PromoVideo() {
     <section
       id="promo-video"
       aria-label="Raymon J Land — short film"
-      className="section-dark"
-      style={{ padding: '40px 24px' }}
+      className="section-dark px-6 md:px-12 3xl:px-20 py-10 md:py-12"
     >
       <motion.div
         initial={reduced ? false : { opacity: 0, y: 24 }}
         whileInView={reduced ? {} : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-12%' }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="relative max-w-[1200px] mx-auto overflow-hidden"
+        className="relative container-wide overflow-hidden"
         style={{
           aspectRatio: '1920 / 816',
           background:  '#000',

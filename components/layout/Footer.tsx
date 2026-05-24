@@ -30,11 +30,13 @@ export function Footer() {
     <footer
       style={{ background: 'var(--dark)', borderTop: '3px solid var(--green)' }}
     >
-      {/* Top grid */}
+      {/* Top grid — outer wrapper handles horizontal padding so the inner
+          grid can stay capped + centered via container-wide on big screens */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1fr] gap-12 px-12 pt-16 pb-12"
+        className="px-12 3xl:px-20 pt-16 pb-12"
         style={{ borderBottom: '1px solid rgba(74,122,53,0.12)' }}
       >
+      <div className="container-wide grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2.2fr_1fr_1fr_1fr] gap-12">
         {/* Brand column */}
         <div>
           <Logo variant="onDark" size="footer" className="mb-2" />
@@ -128,22 +130,25 @@ export function Footer() {
           ))}
         </div>
       </div>
+      </div>
 
       {/* Bottom bar */}
-      <div className="flex justify-between items-center flex-wrap gap-3 px-12 py-6">
-        <p className="text-[11px]" style={{ color: 'rgba(245,240,232,0.2)' }}>
-          © {new Date().getFullYear()} Raymon J Land Watermelon Sales & Land Truck Brokers, Inc.
-        </p>
-        <div className="flex gap-2">
-          {VARIETY_CHIPS.map((c) => (
-            <span
-              key={c.label}
-              className="text-[10px] px-3 py-1"
-              style={{ background: c.bg, color: c.color }}
-            >
-              {c.label}
-            </span>
-          ))}
+      <div className="px-12 3xl:px-20 py-6">
+        <div className="container-wide flex justify-between items-center flex-wrap gap-3">
+          <p className="text-[11px]" style={{ color: 'rgba(245,240,232,0.2)' }}>
+            © {new Date().getFullYear()} Raymon J Land Watermelon Sales & Land Truck Brokers, Inc.
+          </p>
+          <div className="flex gap-2">
+            {VARIETY_CHIPS.map((c) => (
+              <span
+                key={c.label}
+                className="text-[10px] px-3 py-1"
+                style={{ background: c.bg, color: c.color }}
+              >
+                {c.label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

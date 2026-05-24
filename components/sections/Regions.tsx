@@ -19,7 +19,7 @@ export function Regions() {
       className="section-cream section-pad"
       aria-labelledby="regions-heading"
     >
-      <div className="max-w-[1200px] mx-auto">
+      <div className="container-wide">
 
         {/* Header row */}
         <div className="flex justify-between items-end mb-10 flex-wrap gap-6">

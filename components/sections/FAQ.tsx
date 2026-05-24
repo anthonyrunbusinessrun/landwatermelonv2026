@@ -21,7 +21,7 @@ export function FAQ() {
       {/* Seeds texture */}
       <div className="absolute inset-0 texture-seeds pointer-events-none" aria-hidden />
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="container-wide relative z-10">
 
         {/* Header */}
         <div className="text-center mb-12">

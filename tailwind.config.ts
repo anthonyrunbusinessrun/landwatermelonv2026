@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Ultra-wide breakpoint so layouts can grow past the 1536 / 2xl cap.
+      // 1920px is the threshold for full-HD desktops and ultrawide monitors,
+      // which is where the old 1200px max-width started feeling sparse.
+      screens: {
+        '3xl': '1920px',
+      },
       colors: {
         dark:   '#0D1A0A',
         forest: '#1A2216',
