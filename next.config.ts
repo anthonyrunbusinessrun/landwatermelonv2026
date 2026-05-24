@@ -6,11 +6,10 @@ const config: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
 
-  // Image optimization
+  // Image optimization — HTTPS only to avoid mixed-content warnings
   images: {
     remotePatterns: [
-      { protocol: 'http',  hostname: 'landwatermelon.com', pathname: '/wp-content/uploads/**' },
-      { protocol: 'https', hostname: 'landwatermelon.com', pathname: '/wp-content/uploads/**' },
+      { protocol: 'https', hostname: 'landwatermelon.com',    pathname: '/wp-content/uploads/**' },
       { protocol: 'https', hostname: 'static1.1.sqspcdn.com', pathname: '/static/**' },
     ],
     formats: ['image/avif', 'image/webp'],
@@ -24,12 +23,16 @@ const config: NextConfig = {
       {
         source: '/(.*)',
         headers: [
-          { key: 'X-DNS-Prefetch-Control',   value: 'on' },
-          { key: 'X-Frame-Options',           value: 'DENY' },
-          { key: 'X-Content-Type-Options',    value: 'nosniff' },
-          { key: 'Referrer-Policy',           value: 'strict-origin-when-cross-origin' },
-          { key: 'Permissions-Policy',        value: 'camera=(), microphone=(), geolocation=()' },
-          { key: 'X-XSS-Protection',         value: '1; mode=block' },
+          { key: 'X-DNS-Prefetch-Control',     value: 'on' },
+          { key: 'X-Frame-Options',            value: 'DENY' },
+          { key: 'X-Content-Type-Options',     value: 'nosniff' },
+          { key: 'Referrer-Policy',            value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy',         value: 'camera=(), microphone=(), geolocation=()' },
+          { key: 'X-XSS-Protection',           value: '1; mode=block' },
+          // Force HTTPS for 2 years (incl. subdomains); browsers refuse plain HTTP after first secure visit
+          { key: 'Strict-Transport-Security',  value: 'max-age=63072000; includeSubDomains; preload' },
+          // Auto-upgrade any stray http:// asset references to https:// at request time
+          { key: 'Content-Security-Policy',    value: 'upgrade-insecure-requests' },
         ],
       },
       // Cache static assets aggressively

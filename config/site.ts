@@ -98,12 +98,14 @@ export const siteConfig = {
     'PTI Compliant',
   ],
 
+  // Order mirrors scroll position on the home page:
+  // Hero → Gallery → StatsBar → TrustBar → About → Varieties → Regions → BigNumber → Testimonial → FAQ → CTA
   nav: [
+    { label: 'Gallery',     href: '#gallery'   },
+    { label: 'About',       href: '#about'     },
     { label: 'Watermelons', href: '#varieties' },
-    { label: 'Gallery',     href: '#gallery'    },
     { label: 'Regions',     href: '#regions'   },
-    { label: 'About',       href: '#about'      },
-    { label: 'FAQ',         href: '#faq'        },
+    { label: 'FAQ',         href: '#faq'       },
   ],
 } as const
 

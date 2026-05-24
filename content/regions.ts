@@ -26,7 +26,7 @@ export const regions: Region[] = [
     varieties: 'Seedless & Yellow Meat',
     acres:    '850 Acres',
     season:   'May – June',
-    imageUrl:  'http://landwatermelon.com/wp-content/uploads/2012/02/gallery1.jpg',
+    imageUrl:  'https://landwatermelon.com/wp-content/uploads/2012/02/gallery1.jpg',
     imageFallback: '#2D4A22',
   },
   {
@@ -39,7 +39,7 @@ export const regions: Region[] = [
     varieties: 'Yellow Meat & Seedless',
     acres:    '600 Acres',
     season:   'June – July',
-    imageUrl:  'http://landwatermelon.com/wp-content/uploads/2012/02/gallery5.jpg',
+    imageUrl:  'https://landwatermelon.com/wp-content/uploads/2012/02/gallery5.jpg',
     imageFallback: '#3A5C2A',
   },
   {
@@ -52,7 +52,7 @@ export const regions: Region[] = [
     varieties: 'Custom Spec. Any Box, Any Pallet',
     acres:    'Farm-Direct',
     season:   'Full Season',
-    imageUrl:  'http://landwatermelon.com/wp-content/uploads/2012/02/gallery7.jpg',
+    imageUrl:  'https://landwatermelon.com/wp-content/uploads/2012/02/gallery7.jpg',
     imageFallback: '#1A2216',
   },
   {
@@ -65,7 +65,7 @@ export const regions: Region[] = [
     varieties: '3,000 Loads Per Season',
     acres:    'Coast to Coast',
     season:   'Full Season',
-    imageUrl:  'http://landwatermelon.com/wp-content/uploads/2012/02/gallery11.jpg',
+    imageUrl:  'https://landwatermelon.com/wp-content/uploads/2012/02/gallery11.jpg',
     imageFallback: '#0D1A0A',
   },
 ]
