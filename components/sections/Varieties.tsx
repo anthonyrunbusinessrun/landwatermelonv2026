@@ -18,11 +18,10 @@ const DOT_COLOR = {
   sage: 'var(--sage)',
 } as const
 
-const CATEGORY_LABEL = {
-  seedless:  'Seedless',
-  seeded:    'Seeded',
-  specialty: 'Specialty',
-} as const
+// Category label is intentionally a single shared color across every card
+// so the text reads as one consistent "kicker". The colored dot on the left
+// is what carries the per-card accent (sage / red / gold).
+const LABEL_COLOR = 'var(--gold)'
 
 export function Varieties() {
   // Tracks the currently "tapped open" card so the reveal works on touch
@@ -155,9 +154,9 @@ export function Varieties() {
                       />
                       <span
                         className="text-[10px] tracking-[2px] uppercase"
-                        style={{ color: dotColor }}
+                        style={{ color: LABEL_COLOR }}
                       >
-                        {CATEGORY_LABEL[v.category]}
+                        {v.categoryLabel}
                       </span>
                     </div>
 
