@@ -2,6 +2,7 @@ import { Navbar }      from '@/components/layout/Navbar'
 import { Footer }      from '@/components/layout/Footer'
 import { SkipLink }    from '@/components/layout/SkipLink'
 import { Hero }        from '@/components/sections/Hero'
+import { PromoVideo }  from '@/components/sections/PromoVideo'
 import { Gallery }     from '@/components/sections/Gallery'
 import { StatsBar, TrustBar } from '@/components/sections/StatsBar'
 import { About }       from '@/components/sections/About'
@@ -25,6 +26,7 @@ export default function Home() {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <PromoVideo />
         <Gallery />
         <StatsBar />
         <TrustBar />
