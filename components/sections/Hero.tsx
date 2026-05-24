@@ -19,8 +19,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden"
-      style={{ padding: '120px 48px 80px' }}
+      className="relative min-h-screen overflow-hidden flex items-center"
+      style={{ padding: '120px 48px 100px' }}
       aria-label="Raymon J Land — Premium Watermelon Growers Since 1966"
     >
       {/* Background gradient */}
