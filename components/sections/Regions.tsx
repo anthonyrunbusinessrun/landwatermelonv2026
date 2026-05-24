@@ -25,7 +25,7 @@ export function Regions() {
         <div className="flex justify-between items-end mb-10 flex-wrap gap-6">
           <div>
             <MotionWrapper>
-              <SectionTag label="Season Highlights" dotColor="red" theme="cream" />
+              <SectionTag label="Locations" dotColor="red" theme="cream" />
             </MotionWrapper>
             <MotionWrapper delay={0.05}>
               <h2

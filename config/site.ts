@@ -248,7 +248,7 @@ export const siteConfig = {
     { label: 'Gallery',     href: '#gallery'   },
     { label: 'About',       href: '#about'     },
     { label: 'Watermelons', href: '#varieties' },
-    { label: 'Regions',     href: '#regions'   },
+    { label: 'Locations',   href: '#regions'   },
     { label: 'FAQ',         href: '#faq'       },
   ],
 } as const

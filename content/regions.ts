@@ -39,7 +39,7 @@ export const regions: Region[] = [
     varieties: 'Yellow Meat & Seedless',
     acres:    '600 Acres',
     season:   'June – July',
-    imageUrl:  '/images/gallery/7.jpg',
+    imageUrl:  '/images/gallery/georgia-fields-sunset.png',
     imageFallback: '#3A5C2A',
   },
   {

@@ -7,7 +7,7 @@ import { Logo }       from './Logo'
 const NAV_LINKS = [
   { label: 'Home',        href: '#home'      },
   { label: 'Watermelons', href: '#varieties' },
-  { label: 'Regions',     href: '#regions'   },
+  { label: 'Locations',   href: '#regions'   },
   { label: 'About',       href: '#about'     },
   { label: 'FAQ',         href: '#faq'       },
 ]
