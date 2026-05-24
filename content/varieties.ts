@@ -61,8 +61,8 @@ export const varieties: Variety[] = [
     name:          'Truck Brokerage',
     body:          '100+ independent owner-operators and 4 major carriers with hubs across the US — farm to distribution center, coast to coast.',
     detail:        'Land Truck Brokers, Inc. manages 3,000 semi loads per season with precision logistics.',
-    image:         '/images/gallery/trucks-loaded-buses.png',
-    imageW:        768,
-    imageH:        1024,
+    image:         '/images/varieties/truck-brokerage-fleet.png',
+    imageW:        500,
+    imageH:        375,
   },
 ]
