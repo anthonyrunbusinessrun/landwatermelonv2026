@@ -76,14 +76,17 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 </Link>
               ))}
 
-              <Link
-                href="#cta"
+              <a
+                href={siteConfig.loginUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={onClose}
+                aria-label="Log in to the MelonOps staff portal (opens in a new tab)"
                 className="mt-6 text-center text-[11px] tracking-[2px] uppercase py-3.5 transition-colors"
                 style={{ background: 'var(--red)', color: 'var(--cream)' }}
               >
-                Order Now →
-              </Link>
+                Log In →
+              </a>
             </nav>
 
             {/* Footer contact */}

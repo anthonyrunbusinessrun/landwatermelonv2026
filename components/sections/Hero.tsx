@@ -72,15 +72,18 @@ export function Hero() {
 
         {/* CTAs */}
         <motion.div {...anim(0.4)} className="flex flex-wrap gap-3 mb-12">
-          <Link
-            href="#cta"
+          <a
+            href={siteConfig.loginUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Log in to the MelonOps staff portal (opens in a new tab)"
             className="text-[11px] tracking-[2px] uppercase px-7 py-3.5 transition-colors duration-200 font-body"
             style={{ background: 'var(--red)', color: 'var(--cream)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--red2)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'var(--red)')}
           >
-            Order Now →
-          </Link>
+            Log In →
+          </a>
           <Link
             href="#about"
             className="text-[11px] tracking-[2px] uppercase px-7 py-3.5 transition-all duration-200 font-body"

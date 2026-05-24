@@ -45,15 +45,18 @@ export function Navbar() {
             </Link>
           ))}
 
-          <Link
-            href="#cta"
+          <a
+            href={siteConfig.loginUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Log in to the MelonOps staff portal (opens in a new tab)"
             className="text-[10px] tracking-[2px] uppercase px-5 py-2.5 transition-all duration-200 font-body"
             style={{ background: 'var(--green)', color: 'var(--cream)' }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--red)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'var(--green)')}
           >
-            Order Now
-          </Link>
+            Log In
+          </a>
         </div>
 
         {/* Mobile hamburger */}
